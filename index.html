@@ -4,23 +4,10 @@
   <meta charset="utf-8">
   <meta name="description"
         content="Multi-View Pose-Agnostic Change Localization with Zero Labels">
-  <meta name="keywords" content="Multi-view Change Detection, Scene Change Detection, Pose-agnostic Change Detection, Label-free Change Detection, 3D Change Detection">
+  <meta name="keywords" content="Multi-view Change Detection, Scene Change Detection, Pose-agnostic Change Detection, Label-free Change Detection, 3D Change Detection, Gaussian Splatting, 3D Scene Change Detection, Multi-view Change Localization, Zero-shot Change Detection">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Multi-View Pose-Agnostic Change Localization with Zero Labels</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<!--   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-PYVRSFMDRL');
-  </script> -->
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -32,7 +19,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="icon" href="./static/images/logo.jpg">
   <link rel="stylesheet" href="./static/css/index.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -70,9 +57,9 @@
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>QUT Centre for Robotics,   </span>
-            <span class="author-block"><sup>2</sup>ARIAM Hub,   </span>
-            <span class="author-block"><sup>3</sup>ACFR, University of Sydney,   </span>
+            <span class="author-block"><sup>1</sup>QUT Centre for Robotics, &nbsp;  </span>
+            <span class="author-block"><sup>2</sup>ARIAM Hub, &nbsp;   </span>
+            <span class="author-block"><sup>3</sup>ACFR, University of Sydney, &nbsp;   </span>
             <span class="author-block"><sup>4</sup>Abyss Solutions</span>
           </div>
 
@@ -139,13 +126,13 @@
   </div>
 </section>
 
-<!-- Let's create a abstract for my project page-->
+
 <section class="section">
   <div class="container is-centered has-text-centered">
     <div class="columns is-four-fifths is-centered">
       <div class="column is-10">
         <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
+        <div class="content has-text-justified ">
           <p>
             Autonomous agents often require accurate methods for detecting and localizing changes in their environment, 
             particularly when observations are captured from unconstrained and inconsistent viewpoints. We propose a novel label-free, pose-agnostic 
@@ -162,5 +149,84 @@
     </div>
   </div>
 </section>
+
+
+<!-- Method section -->
+<section class="section">
+  <div class="container is-centered has-text-centered">
+    <div class="columns is-four-fifths is-centered">
+      <div class="column is-10">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <p>
+            <img src="./static/images/method.jpg" alt="Method Diagram" style="max-width: 100%; height: auto;">
+          </p>
+          <p>
+            An overview of our proposed approach for multi-view pose-agnostic change detection. 
+            We leverage a 3DGS representation of the pre-change (<em>reference</em>) scene to build 
+            feature and structure-aware change masks given images of the post-change (<em>inference</em>) scene. 
+            We embed this information as additional change channels into the representation, which can be used to render multi-view change masks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{galappaththige2024mv3dcd,
+      title={Multi-View Pose-Agnostic Change Localization with Zero Labels}, 
+      author={Chamuditha Jayanga Galappaththige and Jason Lai and Lloyd Windrim and Donald Dansereau and Niko Suenderhauf and Dimity Miller},
+      year={2024},
+      eprint={2412.03911},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2412.03911}, 
+}</code></pre>
+  </div>
+</section>
+
+
+
+<!-- Acknowledgement section -->
+<section class="section">
+  <div class="container is-centered has-text-centered">
+    <div class="columns is-four-fifths is-centered">
+      <div class="column is-10">
+        <h2 class="title is-4">Acknowledgement</h2>
+        <div class="content has-text-justified is-size-6">
+          <p>
+            This work was supported by the ARC Research Hub in Intelligent Robotic Systems for Real-Time Asset Management (IH210100030) 
+            and Abyss Solutions. C.J., N.S., and D.M. also acknowledge ongoing support from the QUT Centre for Robotics.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License.</a> This website template is from <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. We sincerely thank authors for developing and open-sourcing this template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
 </body>
 </html>
