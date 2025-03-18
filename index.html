@@ -11,7 +11,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
-
+  <link rel="stylesheet" href="./static/css/dics.original.css">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
@@ -26,8 +26,61 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script src="./static/js/dics.original.js"></script>
+
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
 </head>
 <body>
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', domReady);
+
+    function domReady() {
+        new Dics({
+            container: document.querySelectorAll('.b-dics')[0],
+            textPosition: 'top'
+        });
+        new Dics({
+            container: document.querySelectorAll('.b-dics')[1],
+            textPosition: 'top'
+        });
+        new Dics({
+            container: document.querySelectorAll('.b-dics')[2],
+            textPosition: 'top'
+        });
+
+        
+    }
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const swiper = new Swiper('.swiper-container', {
+          loop: true, // Infinite loop
+          navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+          },
+          pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+          },
+          touchStartPreventDefault: false, // Allow other interactions
+      });
+  
+      // Disable Swiper when interacting with the image slider
+      document.querySelectorAll('.b-dics').forEach(element => {
+          element.addEventListener('mouseenter', () => swiper.allowTouchMove = false);
+          element.addEventListener('mouseleave', () => swiper.allowTouchMove = true);
+      });
+  });
+  </script>
+  
 
 <section class="hero">
   <div class="hero-body">
@@ -126,13 +179,46 @@
   </div>
 </section>
 
+<!-- <section id="scene-carousel" style="padding: 30px 0; background-color: #f8f9fa;">
+  <div class="swiper-container">
+      <div class="swiper-wrapper">
+       
+          <div class="swiper-slide">
+              <div style="display: flex; justify-content: center">
+                  <div class="b-dics" style="width: 800px; text-align: center;">
+                      <img src="static/images/Lounge/Inst_2_test_IMG_3860_r.png" alt="Reference Scene">
+                      <img src="static/images/Lounge/Inst_2_test_IMG_3860_q.png" alt="Inference Scene">
+                  </div>
+              </div>
+          </div>
+       
+          <div class="swiper-slide">
+              <div style="display: flex; justify-content: center">
+                  <div class="b-dics" style="width: 800px; text-align: center;">
+                      <img src="static/images/test.gif" alt="Hello Scene">
+                      <img src="static/images/test.gif" alt="Inference Scene">
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      
+      <div class="swiper-pagination"></div>
+  </div>
+</section> -->
+
+
 
 <section class="section">
   <div class="container is-centered has-text-centered">
     <div class="columns is-four-fifths is-centered">
       <div class="column is-10">
         <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified ">
+        <div class="content has-text-centered ">
           <p>
             Autonomous agents often require accurate methods for detecting and localizing changes in their environment, 
             particularly when observations are captured from unconstrained and inconsistent viewpoints. We propose a novel label-free, pose-agnostic 
@@ -156,7 +242,7 @@
   <div class="container is-centered has-text-centered">
     <div class="columns is-four-fifths is-centered">
       <div class="column is-10">
-        <h2 class="title is-3">Method</h2>
+        <h2 class="title is-3">Overview</h2>
         <div class="content has-text-centered">
           <p>
             <img src="./static/images/method.jpg" alt="Method Diagram" class="centered-image" style="max-width: 100%; height: auto;">
@@ -173,21 +259,61 @@
   </div>
 </section>
 
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@misc{galappaththige2024mv3dcd,
-      title={Multi-View Pose-Agnostic Change Localization with Zero Labels}, 
-      author={Chamuditha Jayanga Galappaththige and Jason Lai and Lloyd Windrim and Donald Dansereau and Niko Suenderhauf and Dimity Miller},
-      year={2024},
-      eprint={2412.03911},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2412.03911}, 
-}</code></pre>
+
+
+<!-- New Section with Buttons to Select Scene -->
+<section class="section" id="scene-buttons-section" style="padding: 30px 0; background-color: #f8f9fa;">
+  <div class="container has-text-centered">
+    <h2 class="title is-3">PASLCD Dataset</h2>
+    <div class="buttons is-centered">
+      <button id="scene1-btn" class="button is-primary">Scene 1</button>
+      <button id="scene2-btn" class="button">Scene 2</button>
+    </div>
+    <div id="scene1" class="b-dics" style="width: 800px; margin: 0 auto;">
+      <img src="static/images/Lounge/Inst_2_test_IMG_3860_r.png" alt="Reference Scene">
+      <img src="static/images/Lounge/Inst_2_test_IMG_3860_q.png" alt="Inference Scene">
+    </div>
+    <div id="scene2" class="b-dics" style="width: 800px; margin: 0 auto; display: none;">
+      <img src="static/images/test.gif" alt="Hello Scene">
+      <img src="static/images/test.gif" alt="Inference Scene">
+    </div>
   </div>
 </section>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const scene1Btn = document.getElementById('scene1-btn');
+      const scene2Btn = document.getElementById('scene2-btn');
+      const scene1 = document.getElementById('scene1');
+      const scene2 = document.getElementById('scene2');
+
+      scene1Btn.addEventListener('click', () => {
+          scene1.style.display = 'block';
+          scene2.style.display = 'none';
+          scene1Btn.classList.add('is-primary');
+          scene2Btn.classList.remove('is-primary');
+      });
+
+      scene2Btn.addEventListener('click', () => {
+          scene1.style.display = 'none';
+          scene2.style.display = 'block';
+          scene1Btn.classList.remove('is-primary');
+          scene2Btn.classList.add('is-primary');
+      });
+  });
+</script>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{galappaththige2024mv3dcd,
+      title={Multi-View Pose-Agnostic Change Localization with Zero Labels}, 
+      author={Chamuditha Jayanga Galappaththige and Jason Lai and Lloyd Windrim and Donald Dansereau and Niko Suenderhauf and Dimity Miller},
+      booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+      year={2025},
+}</code></pre>
+  </div>
+</section>
 
 
 <!-- Acknowledgement section -->
@@ -207,9 +333,8 @@
   </div>
 </section>
 
-<footer class="footer">
+<footer class="footer centered-footer">
   <div class="container">
-
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
@@ -217,7 +342,7 @@
             This website is licensed under a <a rel="license"
                                                 href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
             Commons Attribution-ShareAlike 4.0 International License.</a> This website template is from <a
-            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. We sincerely thank authors for developing and open-sourcing this template.
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. The image comparisson slider is taken from <a href="https://github.com/abelcabezaroman/definitive-image-comparison-slider">definitive-image-comparison-slider</a>. We sincerely thank authors for developing and open-sourcing these templates. 
           </p>
         </div>
       </div>

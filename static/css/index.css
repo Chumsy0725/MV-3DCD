@@ -167,3 +167,45 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+.centered-footer .content {
+  text-align: center;
+}
+
+#scene-carousel {
+  padding: 50px 0;
+  background-color: #f8f9fa;
+  position: relative;
+}
+
+/* Make sure Swiper wrapper respects the image size */
+.swiper-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Center Swiper navigation buttons relative to .b-dics */
+.b-dics {
+  position: relative;
+}
+
+/* Adjust navigation buttons */
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Fine-tune centering */
+  color: #000; /* Change arrow color */
+  z-index: 10; /* Ensure it's above images */
+}
+
+/* Left button outside the slider */
+.swiper-button-prev {
+  left: -50px; /* Adjust to align with your layout */
+}
+
+/* Right button outside the slider */
+.swiper-button-next {
+  right: -50px; /* Adjust to align with your layout */
+}
