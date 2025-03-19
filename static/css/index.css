@@ -209,3 +209,7 @@ body {
 .swiper-button-next {
   right: -50px; /* Adjust to align with your layout */
 }
+
+.hero {
+  margin-bottom: -50px; /* Adjust this value to reduce space */
+}
